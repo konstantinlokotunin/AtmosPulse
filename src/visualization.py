@@ -25,3 +25,19 @@ def plot_weather(dates, temp_max, temp_min):
     plt.savefig("outputs/weather_data.png", dpi=300)
     plt.show()
 
+def plot_precipitation(df):
+
+    _, ax = plt.subplots(figsize=(10, 4))
+
+    ax.bar(df["date"], df["precipitation"], color="#60a5fa")
+
+    ax.set_title("Daily Precipitation (Vienna)", fontsize=16, pad=12)
+    ax.set_ylabel("mm")
+    ax.set_xlabel("Date")
+
+    ax.grid(axis='y', linestyle='--', linewidth=1, alpha=0.6)
+
+    plt.xticks(fontsize=10, rotation=45)
+    plt.tight_layout()
+    plt.savefig("outputs/precipitation.png", dpi=300)
+    plt.show()
