@@ -6,7 +6,7 @@ def fetch_weather_data():
     params = {
         "latitude": 48.2082,
         "longitude": 16.3738,
-        "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum",
+        "daily": "time,temperature_2m_max,temperature_2m_min,precipitation_sum",
         "timezone": "Europe/Berlin"
     }
 
@@ -16,3 +16,14 @@ def fetch_weather_data():
     data = response.json()
 
     return data
+
+
+def parse_weather_data(data):
+    daily = data["daily"]
+
+    dates = daily["time"]
+    temp_max = daily["temperature_2m_max"]
+    temp_min = daily["temperature_2m_min"]
+    precipitation = daily["precipitation_sum"]
+
+    return dates, temp_max, temp_min, precipitation
