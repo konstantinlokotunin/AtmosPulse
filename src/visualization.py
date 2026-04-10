@@ -18,3 +18,5 @@ def plot_weather(dates, temp_max, temp_min):
 
     plt.tight_layout()
     plt.show()
+
+    plt.savefig("outputs/weather_data.png", dpi=300)
