@@ -22,6 +22,6 @@ def plot_weather(dates, temp_max, temp_min):
     ax.grid(True, color="#e1e8f4", linestyle='--', linewidth=1, alpha=0.6)
 
     plt.tight_layout()
+    plt.savefig("outputs/weather_data.png", dpi=300)
     plt.show()
 
-    plt.savefig("outputs/weather_data.png", dpi=300)
