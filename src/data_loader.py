@@ -1,4 +1,5 @@
 import requests
+import pandas as pd
 
 def fetch_weather_data():
     url = "https://api.open-meteo.com/v1/forecast"
@@ -21,9 +22,11 @@ def fetch_weather_data():
 def parse_weather_data(data):
     daily = data["daily"]
 
-    dates = daily["time"]
-    temp_max = daily["temperature_2m_max"]
-    temp_min = daily["temperature_2m_min"]
-    precipitation = daily["precipitation_sum"]
+    df = pd.DataFrame({
+        "date": pd.to_datetime(daily["time"]),
+        "temp_max": daily["temperature_2m_max"],
+        "temp_min": daily["temperature_2m_min"],
+        "precipitation": daily["precipitation_sum"]
+    })
 
-    return dates, temp_max, temp_min, precipitation
+    return df
