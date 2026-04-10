@@ -1,8 +1,8 @@
 import numpy as np
 
 def calculate_average_temp(temp_max, temp_min):
-    arr = np.array(temp_max) + np.array(temp_min)
-    return (np.mean(arr))
+    avg_temp = (np.mean((np.array(temp_max))) + np.mean(np.array(temp_min))) / 2
+    return avg_temp
 
 
 def find_hottest_day(dates, temp_max):

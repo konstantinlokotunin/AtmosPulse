@@ -7,7 +7,7 @@ def main():
     data = fetch_weather_data()
     dates, temp_max, temp_min, precipitation = parse_weather_data(data)
 
-    avg_temp = round(calculate_average_temp(temp_max, temp_min),1)
+    avg_temp = round(calculate_average_temp(temp_max, temp_min), 1)
 
     hottest_day, hottest_temp = find_hottest_day(dates, temp_max)
     coldest_day, coldest_temp = find_coldest_day(dates, temp_min)
