@@ -12,6 +12,7 @@ def main():
     hottest_day, hottest_temp = find_hottest_day(dates, temp_max)
     coldest_day, coldest_temp = find_coldest_day(dates, temp_min)
 
+    print(f"Average temperature: {avg_temp}°C")
     print(f"Hottest Day: {hottest_day} ({hottest_temp}°C)")
     print(f"Coldest Day: {coldest_day} ({coldest_temp}°C)")
 

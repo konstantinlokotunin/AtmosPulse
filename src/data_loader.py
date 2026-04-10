@@ -6,7 +6,7 @@ def fetch_weather_data():
     params = {
         "latitude": 48.2082,
         "longitude": 16.3738,
-        "daily": "time,temperature_2m_max,temperature_2m_min,precipitation_sum",
+        "daily": "temperature_2m_max,temperature_2m_min,precipitation_sum",
         "timezone": "Europe/Berlin"
     }
 
