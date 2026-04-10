@@ -10,7 +10,9 @@ def fetch_weather_data():
         "timezone": "Europe/Berlin"
     }
 
-    response = requests.get(url, params=params)
+    response = requests.get(url, params=params, timeout=10)
+    response.raise_for_status()  # 💥 crash if API fails
+    
     data = response.json()
 
     return data
