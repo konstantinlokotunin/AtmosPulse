@@ -69,7 +69,8 @@ python main.py
 
 ---
 
-📊 Example Insights Generated
+## 📊 Example Insights Generated
+
 * Identification of hottest and coldest days
 * Smoothed temperature trends using moving averages
 * Detection of unusual temperature deviations (anomalies)
@@ -89,7 +90,8 @@ This project demonstrates:
   
 ---
 
-🔮 Future Improvements
+## 🔮 Future Improvements
+
 * CLI interface (argparse / Typer)
 * Export analysis results to CSV
 * Interactive dashboards (Plotly / Streamlit)
