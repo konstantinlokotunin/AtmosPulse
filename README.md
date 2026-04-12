@@ -27,25 +27,26 @@ API → Data Processing → Analysis → Visualization → Insights
 
 ## 🧱 Project Structure
 
+```
 weather-analyzer/
 │
-├── data/ # Raw or cached data
-├── src/ # Core logic
-│ ├── data_loader.py
-│ ├── analysis.py
-│ ├── visualization.py
+├── src/               # Core logic
+│   ├── data_loader.py
+│   ├── analysis.py
+│   ├── visualization.py
 │
-├── outputs/ # Generated plots & reports
-├── main.py # Entry point
+├── outputs/           # Generated files (plots, exports)
+├── main.py            # Entry point
 ├── README.md
+```
 
 ---
 
 ## 📸 Example Output
 
-![Temperature Trends](outputs/temp_trend.png)
+![Temperature Trends](outputs/weather_data.png)
 ![Precipitation](outputs/precipitation.png)
-![Anomalies](outputs/anomalies.png)
+![Anomalies](outputs/temp_trend.png)
 
 ---
 
