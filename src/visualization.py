@@ -10,20 +10,21 @@ def plot_weather(df):
     x = np.arange(len(df["date"]))
 
     ax.set_xticks(x)
-    ax.set_xticklabels(df["date"], fontsize=10, rotation=30)
+    ax.set_xticklabels(df["date"], fontsize=11, rotation=30)
 
-    ax.plot(x, df["temp_max"], label="Max Temperature", marker='o', color="#eb2556")
-    ax.plot(x, df["temp_min"], label="Min Temperature", marker='o', color="#3b82f6")
+    ax.plot(x, df["temp_max"], label="Max Temperature °C", marker='o', color="#eb2556")
+    ax.plot(x, df["temp_min"], label="Min Temperature °C", marker='o', color="#3b82f6")
 
-    ax.set_title("Temperature Trends (Vienna)", fontsize=16, pad=12)
+    ax.set_title("Daily Temperature (Vienna)", fontsize=17, pad=12)
     ax.set_ylabel("°C")
 
+    ax.tick_params(axis='y', labelsize=11)
+
     ax.legend()
-    ax.grid(True, color="#e1e8f4", linestyle='--', linewidth=1, alpha=0.6)
+    ax.grid(True, linestyle='--', alpha=0.6)
 
     plt.tight_layout()
     plt.savefig("outputs/weather_data.png", dpi=300)
-    plt.show()
 
 def plot_precipitation(df):
 
@@ -33,31 +34,38 @@ def plot_precipitation(df):
 
     ax.bar(df["date"], df["precipitation"], width, color="#60a5fa")
 
-    ax.set_title("Daily Precipitation (Vienna)", fontsize=16, pad=12)
+    ax.set_title("Daily Precipitation (Vienna)", fontsize=17, pad=12)
     ax.set_ylabel("mm")
-    ax.set_xlabel("Date")
 
-    ax.grid(axis='y', linestyle='--', linewidth=1, alpha=0.6)
+    y_max = int(df["precipitation"].max()) + 2
 
-    plt.xticks(fontsize=10, rotation=30)
+    ax.set_yticks(np.arange(0, y_max + 1))
+
+    ax.tick_params(axis='y', labelsize=11)
+
+    ax.grid(True, linestyle='--', alpha=0.6)
+
+    plt.xticks(fontsize=11, rotation=30)
     plt.tight_layout()
     plt.savefig("outputs/precipitation.png", dpi=300)
-    plt.show()
 
 def plot_temperature_with_ma(df):
 
     _, ax = plt.subplots(figsize=(10, 5))
 
-    ax.plot(df["date"], df["temp_avg"], label="Avg Temp", marker='o')
-    ax.plot(df["date"], df["temp_ma"], label="Moving Avg (3d)", linestyle='--')
+    y = np.arange(-10, 41, 5)
 
-    ax.set_title("Temperature Trend with Moving Average")
+    ax.plot(df["date"], df["temp_avg"], label="Daily Average Temperature °C", marker='o')
+    ax.plot(df["date"], df["temp_ma"], label="Moving Average", linestyle='--')
+
+    ax.set_title("Temperature °C Trends (Vienna)", fontsize=17, pad=12)
     ax.set_ylabel("°C")
+
+    ax.tick_params(axis='y', labelsize=11)
 
     ax.legend()
     ax.grid(True, linestyle='--', alpha=0.6)
 
-    plt.xticks(fontsize=10, rotation=30)
+    plt.xticks(fontsize=11, rotation=30)
     plt.tight_layout()
     plt.savefig("outputs/temp_trend.png", dpi=300)
-    plt.show()
