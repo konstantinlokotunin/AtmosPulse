@@ -10,6 +10,17 @@ def add_moving_average(df, window=2):
 
     return df
 
+def detect_anomalies(df, threshold=2):
+    df["temp_avg"] = (df["temp_max"] + df["temp_min"]) / 2
+    mean_temp = df["temp_avg"].mean()
+
+    df["difference"] = df["temp_avg"] - mean_temp
+
+    # Flag strong deviations
+    df["anomaly"] = df["difference"].abs() > threshold
+
+    return df
+
 def find_hottest_day(df):
     idx = np.argmax(df["temp_max"])
     return df["date"][idx], df["temp_max"][idx]
