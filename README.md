@@ -20,7 +20,7 @@ API → Data Processing → Analysis → Visualization → Insights
 * 🌧️ Precipitation analysis and visualization
 * 📈 Time-series visualizations (temperature trends)
 * 🔥 Anomaly detection and highlighting
-* 💾 Export plots to image files
+* 💾 Export analysis results to CSV
 * 🧠 Clean, modular project structure
 
 ---
@@ -93,7 +93,6 @@ This project demonstrates:
 ## 🔮 Future Improvements
 
 * CLI interface (argparse / Typer)
-* Export analysis results to CSV
 * Interactive dashboards (Plotly / Streamlit)
 * Forecasting models (time-series / ML)
 
