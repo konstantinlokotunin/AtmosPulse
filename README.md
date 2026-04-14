@@ -1,4 +1,4 @@
-# 🌦️ Weather Analyzer (Python)
+# 🌦️ AtmosPulse (Python)
 
 A modular Python project for analyzing and visualizing real-world weather data using API integration, time-series analysis, and statistical techniques.
 
@@ -28,7 +28,7 @@ API → Data Processing → Analysis → Visualization → Insights
 ## 🧱 Project Structure
 
 ```
-weather-analyzer/
+atmos-pulse/
 │
 ├── src/               # Core logic
 │   ├── data_loader.py
