@@ -28,7 +28,7 @@ API → Data Processing → Analysis → Visualization → Insights
 ## 🧱 Project Structure
 
 ```
-atmos-pulse/
+AtmosPulse/
 │
 ├── src/               # Core logic
 │   ├── data_loader.py
