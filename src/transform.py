@@ -23,12 +23,12 @@ def detect_anomalies(df, threshold=2):
 
 def find_hottest_day(df):
     idx = np.argmax(df["temp_max"])
-    return df["date"][idx], df["temp_max"][idx]
+    return df["date_str"][idx], df["temp_max"][idx]
 
 
 def find_coldest_day(df):
     idx = np.argmin(df["temp_min"])
-    return df["date"][idx], df["temp_min"][idx]
+    return df["date_str"][idx], df["temp_min"][idx]
 
 
 def export_results(df, filename):

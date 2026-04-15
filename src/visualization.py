@@ -7,15 +7,13 @@ sns.despine()
 sns.set_palette("deep")
 
 def plot_weather(df):
-    _, ax = plt.subplots(figsize=(10, 5))
-
-    x = range(len(df))
+    fig, ax = plt.subplots(figsize=(10, 5))
 
     ax.set_xticks(range(len(df)))
     ax.set_xticklabels(df["date_str"], fontsize=11, rotation=30)
 
-    ax.plot(x, df["temp_max"], label="Max Temperature °C", marker='o', linewidth=2)
-    ax.plot(x, df["temp_min"], label="Min Temperature °C", marker='o', linewidth=2)
+    ax.plot(df["date"], df["temp_max"], label="Max Temperature °C", marker='o', linewidth=2)
+    ax.plot(df["date"], df["temp_min"], label="Min Temperature °C", marker='o', linewidth=2)
 
     ax.set_title("Daily Temperature °C (Vienna)", fontsize=17, pad=12, weight="bold")
     ax.set_ylabel("°C")
@@ -31,10 +29,11 @@ def plot_weather(df):
 
     plt.tight_layout()
     plt.savefig("outputs/weather_data.png", dpi=300)
+    plt.close(fig)
 
 def plot_precipitation(df):
 
-    _, ax = plt.subplots(figsize=(10, 4))
+    fig, ax = plt.subplots(figsize=(10, 4))
 
     width = 0.35
 
@@ -49,16 +48,16 @@ def plot_precipitation(df):
 
     ax.tick_params(axis='y', labelsize=10)
 
-    ax.legend(frameon=False)
     ax.grid(True, linestyle='--', alpha=0.5)
 
     plt.xticks(fontsize=11, rotation=30)
     plt.tight_layout()
     plt.savefig("outputs/precipitation.png", dpi=300)
+    plt.close(fig)
 
 def plot_temperature_with_ma(df):
 
-    _, ax = plt.subplots(figsize=(10, 5))
+    fig, ax = plt.subplots(figsize=(10, 5))
 
     y = np.arange(-10, 41, 5)
 
@@ -91,3 +90,4 @@ def plot_temperature_with_ma(df):
     plt.xticks(fontsize=11, rotation=30)
     plt.tight_layout()
     plt.savefig("outputs/temp_trend.png", dpi=300)
+    plt.close(fig)

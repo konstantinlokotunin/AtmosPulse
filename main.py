@@ -25,7 +25,5 @@ def main():
     plot_precipitation(df)
     plot_temperature_with_ma(df)
 
-    plt.show()
-
 if __name__ == "__main__":
     main()
