@@ -7,6 +7,8 @@ sns.set_theme(style="whitegrid", context="talk")
 def plot_weather(df):
     _, ax = plt.subplots(figsize=(10, 5))
 
+    x = range(len(df))
+
     ax.set_xticks(range(len(df)))
     ax.set_xticklabels(df["date_str"], fontsize=11, rotation=30)
 
