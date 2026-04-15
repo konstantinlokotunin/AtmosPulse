@@ -1,6 +1,7 @@
 import numpy as np
 import csv
 
+
 def calculate_average_temp(df):
     avg_temp = (np.mean((np.array(df["temp_max"]))) + np.mean(np.array(df["temp_max"]))) / 2
     return avg_temp

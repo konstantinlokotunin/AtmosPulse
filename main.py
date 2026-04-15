@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    data = fetch_weather_data()
-    df = parse_weather_data(data)
+    df = fetch_weather_data()
+    df = parse_weather_data(df)
     df = add_moving_average(df)
     df = detect_anomalies(df)
 

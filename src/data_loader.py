@@ -16,17 +16,22 @@ def fetch_weather_data():
     
     data = response.json()
 
-    return data
-
-
-def parse_weather_data(data):
     daily = data["daily"]
 
-    df = pd.DataFrame({
-        "date": pd.to_datetime(daily["time"]),
-        "temp_max": daily["temperature_2m_max"],
-        "temp_min": daily["temperature_2m_min"],
-        "precipitation": daily["precipitation_sum"]
-    })
+    df = pd.DataFrame(daily)
 
     return df
+
+
+def parse_weather_data(df):
+
+    df = df.rename(columns={
+        "time": "date",
+        "temperature_2m_max": "temp_max",
+        "temperature_2m_min": "temp_min",
+        "precipitation_sum": "precipitation"
+    })
+
+    df["date"] = pd.to_datetime(df["date"])
+
+    return df[["date", "temp_max", "temp_min", "precipitation"]]
