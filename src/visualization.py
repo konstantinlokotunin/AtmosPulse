@@ -24,7 +24,7 @@ def plot_weather(df):
     y_max = int(df["temp_max"].max())
     ax.set_yticks(np.arange(y_min, y_max + 2, 3))
 
-    ax.tick_params(axis='y', labelsize=11)
+    ax.tick_params(axis='y', labelsize=10)
 
     ax.legend(frameon=False)
     ax.grid(True, linestyle='--', alpha=0.5)
@@ -47,7 +47,7 @@ def plot_precipitation(df):
 
     ax.set_yticks(np.arange(0, y_max + 1))
 
-    ax.tick_params(axis='y', labelsize=11)
+    ax.tick_params(axis='y', labelsize=10)
 
     ax.legend(frameon=False)
     ax.grid(True, linestyle='--', alpha=0.5)
@@ -83,7 +83,7 @@ def plot_temperature_with_ma(df):
 
     ax.set_yticks(np.arange(y_min, y_max + 2))
     
-    ax.tick_params(axis='y', labelsize=11)
+    ax.tick_params(axis='y', labelsize=10)
 
     ax.legend(frameon=False)
     ax.grid(True, linestyle='--', alpha=0.5)
