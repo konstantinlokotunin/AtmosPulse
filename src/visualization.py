@@ -14,7 +14,7 @@ COLORS = {
 
 def style_ax(ax):
     # Background
-    ax.set_facecolor("#E5ECF0")  # Alice Blue
+    ax.set_facecolor("#F2F6F8")  # platinum
 
     # Grid (subtle, vertical only)
     ax.grid(True, axis="x", color="#9ca3af", linestyle="--", alpha=0.5)
