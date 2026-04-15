@@ -7,9 +7,7 @@ sns.set_theme(style="whitegrid", context="talk")
 def plot_weather(df):
     _, ax = plt.subplots(figsize=(10, 5))
 
-    x = np.arange(len(df["date"]))
-
-    ax.set_xticks(x)
+    ax.set_xticks(range(len(df)))
     ax.set_xticklabels(df["date_str"], fontsize=11, rotation=30)
 
     ax.plot(x, df["temp_max"], label="Max Temperature °C", marker='o', linewidth=2, color="#eb2556")
