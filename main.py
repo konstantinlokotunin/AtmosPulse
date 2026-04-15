@@ -1,4 +1,4 @@
-from src.data_loader import fetch_weather_data, parse_weather_data
+from src.extract import fetch_weather_data, parse_weather_data
 from src.analysis import calculate_average_temp, find_hottest_day, find_coldest_day, add_moving_average, detect_anomalies, export_results
 from src.visualization import plot_weather, plot_precipitation, plot_temperature_with_ma
 import matplotlib.pyplot as plt

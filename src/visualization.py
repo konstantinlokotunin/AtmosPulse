@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
+import seaborn as sns
 
-plt.style.use("seaborn-v0_8")
+sns.set_theme(style="whitegrid", context="talk")
 
 def plot_weather(df):
     _, ax = plt.subplots(figsize=(10, 5))
@@ -10,7 +10,7 @@ def plot_weather(df):
     x = np.arange(len(df["date"]))
 
     ax.set_xticks(x)
-    ax.set_xticklabels(df["date"], fontsize=11, rotation=30)
+    ax.set_xticklabels(df["date_str"], fontsize=11, rotation=30)
 
     ax.plot(x, df["temp_max"], label="Max Temperature °C", marker='o', linewidth=2, color="#eb2556")
     ax.plot(x, df["temp_min"], label="Min Temperature °C", marker='o', linewidth=2, color="#3b82f6")

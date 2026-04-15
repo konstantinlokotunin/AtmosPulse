@@ -34,4 +34,6 @@ def parse_weather_data(df):
 
     df["date"] = pd.to_datetime(df["date"])
 
-    return df[["date", "temp_max", "temp_min", "precipitation"]]
+    df["date_str"] = df["date"].dt.strftime("%Y-%m-%d")
+
+    return df[["date", "date_str", "temp_max", "temp_min", "precipitation"]]
